@@ -25,5 +25,12 @@ public class AdminScreen extends AppCompatActivity {
             }
         });
 
+        btn_student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminScreen.this, ManageStudent.class);
+                startActivity(i);
+            }
+        });
     }
 }
