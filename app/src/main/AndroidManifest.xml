@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddCanteen"></activity>
+        <activity android:name=".ManageStudent"></activity>
+        <activity android:name=".AddCanteen" />
         <activity android:name=".ManageCanteen" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".Login">
