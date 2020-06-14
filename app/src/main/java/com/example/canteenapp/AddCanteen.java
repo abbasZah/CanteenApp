@@ -3,6 +3,8 @@ package com.example.canteenapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class AddCanteen extends AppCompatActivity {
@@ -22,6 +24,17 @@ public class AddCanteen extends AppCompatActivity {
         EditText eet_password_= findViewById(R.id.et_password);
 
 
+        Button btn_add_canteen = findViewById(R.id.btn_add_canteen);
+
+        btn_add_canteen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Test my commit
+
+
+            }
+        });
 
     }
 }
