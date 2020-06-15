@@ -37,7 +37,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CHEFS_TABLE = "CREATE TABLE " + table_canteen + "("
+        String CREATE_CANTEENS_TABLE = "CREATE TABLE " + table_canteen + "("
                 + col_c_id + " INTEGER PRIMARY KEY,"
                 + col_c_management_name + " TEXT,"
                 + col_c_handler_name + " TEXT,"
@@ -46,7 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + col_c_address + " TEXT,"
                 + col_c_username + " TEXT,"
                 + col_c_password + " TEXT" + ")";
-        db.execSQL(CREATE_CHEFS_TABLE);
+        db.execSQL(CREATE_CANTEENS_TABLE);
     }
 
 
@@ -98,29 +98,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     public List<Canteen> getAllCanteens() {
-        List<Canteen> chefList = new ArrayList<Canteen>();
+        List<Canteen> canteenList = new ArrayList<Canteen>();
         String selectQuery = "SELECT * FROM " + table_canteen;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {
             do {
-                Canteen chef = new Canteen();
-                chef.setId(Integer.parseInt(cursor.getString(0)));
-                chef.setManagement_name(cursor.getString(1));
-                chef.setHandler_name(cursor.getString(2));
-                chef.setPhone_no(cursor.getString(3));
-                chef.setNo_of_workers(cursor.getString(4));
-                chef.setAddress(cursor.getString(5));
-                chef.setUsername(cursor.getString(6));
-                chef.setPassword(cursor.getString(7));
+                Canteen canteen = new Canteen();
+                canteen.setId(Integer.parseInt(cursor.getString(0)));
+                canteen.setManagement_name(cursor.getString(1));
+                canteen.setHandler_name(cursor.getString(2));
+                canteen.setPhone_no(cursor.getString(3));
+                canteen.setNo_of_workers(cursor.getString(4));
+                canteen.setAddress(cursor.getString(5));
+                canteen.setUsername(cursor.getString(6));
+                canteen.setPassword(cursor.getString(7));
 
 
-                chefList.add(chef);
+                canteenList.add(canteen);
             } while (cursor.moveToNext());
         }
 
-        return chefList;
+        return canteenList;
     }
 
 

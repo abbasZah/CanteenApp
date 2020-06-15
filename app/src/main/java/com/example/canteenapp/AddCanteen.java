@@ -45,7 +45,7 @@ public class AddCanteen extends AppCompatActivity {
                         et_password.getText().toString()
 
                 ));
-                Toast.makeText(getApplicationContext(), "Chef Added Successfully" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Canteen Added Successfully" , Toast.LENGTH_SHORT).show();
             }
         });
 
