@@ -2,8 +2,12 @@ package com.example.canteenapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -63,6 +67,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert(table_canteens,null, values);
         db.close();
 
+    }
+
+
+    public List<Canteen> getAllCanteens() {
+        List<Canteen> canteenList = new ArrayList<Canteen>();
+
+        String selectQuery = "SELECT * FROM " + table_canteens;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                Canteen canteen = new Canteen();
+                canteen.setId(Integer.parseInt(cursor.getString(0)));
+                canteen.setManagement_name(cursor.getString(1));
+                canteen.setHandler_name(cursor.getString(2));
+                canteen.setPhone_no(cursor.getString(3));
+                canteen.setNo_of_workers(Integer.parseInt(cursor.getString(4)));
+                canteen.setAddress(cursor.getString(5));
+                canteen.setUsername(cursor.getString(6));
+                canteen.setPassword(cursor.getString(7));
+
+                canteenList.add(canteen);
+            } while (cursor.moveToNext());
+        }
+
+        return canteenList;
     }
 
 }
