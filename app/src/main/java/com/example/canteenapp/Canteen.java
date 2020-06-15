@@ -2,6 +2,7 @@ package com.example.canteenapp;
 
 public class Canteen {
 
+    private int id;
     private String management_name;
     private String handler_name;
     private String phone_no;
@@ -10,8 +11,12 @@ public class Canteen {
     private String username;
     private String password;
 
-    public Canteen(String management_name, String handler_name, String phone_no, int no_of_workers, String address, String username, String password) {
+    public Canteen() {
+    }
 
+    public Canteen(int id, String management_name, String handler_name, String phone_no, int no_of_workers, String address, String username, String password) {
+
+        this.id = id;
         this.management_name = management_name;
         this.handler_name = handler_name;
         this.phone_no = phone_no;
@@ -21,6 +26,23 @@ public class Canteen {
         this.password = password;
     }
 
+    public Canteen(String management_name, String handler_name, String phone_no, int no_of_workers, String address, String username, String password) {
+        this.management_name = management_name;
+        this.handler_name = handler_name;
+        this.phone_no = phone_no;
+        this.no_of_workers = no_of_workers;
+        this.address = address;
+        this.username = username;
+        this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getManagement_name() {
         return management_name;
