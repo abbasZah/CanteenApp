@@ -26,4 +26,11 @@
     <string name="manage_canteen">Manage Canteen</string>
     <string name="manage_student">Manage Student</string>
     <string name="textview">TextView</string>
+    <string name="student_name">Student Name</string>
+    <string name="enter_your_full_name">Full name</string>
+    <string name="add_student">Add Student</string>
+    <string name="father_name">Father Name</string>
+    <string name="degree_major">Degree Major</string>
+    <string name="deg_major">i.e: Computer Science, Software Engineering</string>
+    <string name="student_id">Student Id</string>
 </resources>

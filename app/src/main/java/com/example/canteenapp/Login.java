@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
 
         final Admin admin = new Admin("admin","123","Ali");
 
-        final EditText et_username = findViewById(R.id.et_username);
+        final EditText et_username = findViewById(R.id.et_student_id);
         final EditText et_password = findViewById(R.id.et_password);
         Button btn_login = findViewById(R.id.btn_login);
 

@@ -7,7 +7,7 @@
     tools:context=".Login">
 
     <EditText
-        android:id="@+id/et_username"
+        android:id="@+id/et_student_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
@@ -38,10 +38,10 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/et_username"
+        app:layout_constraintEnd_toEndOf="@+id/et_student_id"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_username"
-        app:layout_constraintTop_toBottomOf="@+id/et_username"
+        app:layout_constraintStart_toStartOf="@+id/et_student_id"
+        app:layout_constraintTop_toBottomOf="@+id/et_student_id"
         android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
