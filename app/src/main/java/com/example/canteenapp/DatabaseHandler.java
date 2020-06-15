@@ -105,6 +105,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
+
+                
                 Canteen canteen = new Canteen();
                 canteen.setId(Integer.parseInt(cursor.getString(0)));
                 canteen.setManagement_name(cursor.getString(1));
