@@ -43,6 +43,18 @@ public class ManageCanteen extends AppCompatActivity {
             }
         });
 
+        Button btn_delete = findViewById(R.id.btn_delete);
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(ManageCanteen.this, DeleteCanteen.class);
+                startActivity(i);
+
+            }
+        });
+
 
 
     }

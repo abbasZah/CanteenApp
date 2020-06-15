@@ -25,14 +25,16 @@ public class ShowCanteens extends AppCompatActivity {
         String [] canteen_array = new String[canteens.size()];
         int i=0;
         for (Canteen cn : canteens) {
-            canteen_array[i] = cn.getManagement_name() +" ("+ cn.getHandler_name() + " ,PhNo: " + cn.getPhone_no() + ") ";
+            canteen_array[i] = "Id: " + cn.getId() + "\nManagement Name: " + cn.getManagement_name() +"\nHandler Name: "+ cn.getHandler_name() + "\nPhone No: " + cn.getPhone_no()
+                            + "\nNo. of Workers: " + cn.getNo_of_workers() + "\nAddress: " + cn.getAddress() +"\nUsername: "+ cn.getUsername() + "\nPassword: " + cn.getPassword()
+            ;
             log = log + "Id: " + cn.getId() + " ,Name: " + cn.getManagement_name() + " ,Phone: " + cn.getPhone_no();
 
             Log.d("Name: ", log);
             i++;
         }
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1 , canteen_array);
+                R.layout.activity_listview, canteen_array);
         ListView listView = (ListView) findViewById(R.id.lv_canteen_list);
         listView.setAdapter(adapter);
 

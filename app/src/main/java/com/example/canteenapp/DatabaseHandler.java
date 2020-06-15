@@ -78,12 +78,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-/*
+
 
     boolean checkIfExist(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(table_canteen, new String[] { col_c_id,
-                        col_c_NAME, col_c_PH_NO }, col_c_PH_NO + "=?",
+                        col_c_management_name,
+                        col_c_handler_name,
+                        col_c_phone_no,
+                        col_c_no_of_workers,
+                        col_c_address,
+                        col_c_username,
+                        col_c_password }, col_c_id + "=?",
                 new String[] { name }, null, null, null, null);
         if (cursor.getCount() > 0)
             return true;
@@ -93,7 +99,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-*/
+
 
 
 
@@ -106,7 +112,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
 
-                
+
                 Canteen canteen = new Canteen();
                 canteen.setId(Integer.parseInt(cursor.getString(0)));
                 canteen.setManagement_name(cursor.getString(1));
@@ -126,6 +132,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
+
+
+    public void deleteCanteen(Canteen canteen) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(table_canteen, col_c_id + " = ?",
+                new String[] { Integer.toString(canteen.getId()) });
+        db.close();
+
+    }
 
 
 
