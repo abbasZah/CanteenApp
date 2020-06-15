@@ -61,16 +61,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    void addCanteen(Canteen con) {
+    void addCanteen(Canteen canteen) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(col_c_management_name, con.getManagement_name());
-        values.put(col_c_handler_name, con.getHandler_name());
-        values.put(col_c_phone_no, con.getPhone_no());
-        values.put(col_c_no_of_workers, con.getNo_of_workers());
-        values.put(col_c_address, con.getAddress());
-        values.put(col_c_username, con.getUsername());
-        values.put(col_c_password, con.getPassword());
+        values.put(col_c_management_name, canteen.getManagement_name());
+        values.put(col_c_handler_name, canteen.getHandler_name());
+        values.put(col_c_phone_no, canteen.getPhone_no());
+        values.put(col_c_no_of_workers, canteen.getNo_of_workers());
+        values.put(col_c_address, canteen.getAddress());
+        values.put(col_c_username, canteen.getUsername());
+        values.put(col_c_password, canteen.getPassword());
 
         db.insert(table_canteen, null, values);
         db.close();
@@ -143,11 +143,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
+/*
+
+    //Start from Here
+
+    public int updateCanteen(Canteen canteen) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(col_c_management_name, canteen.getManagement_name());
+        values.put(col_c_handler_name, canteen.getHandler_name());
+        values.put(col_c_phone_no, canteen.getPhone_no());
+        values.put(col_c_no_of_workers, canteen.getNo_of_workers());
+        values.put(col_c_address, canteen.getAddress());
+        values.put(col_c_username, canteen.getUsername());
+        values.put(col_c_password, canteen.getPassword());
+
+
+        return db.update(table_canteen, values, col_c_id + " = ?",
+                new String[] { String.valueOf(canteen.getId()) });
+    }
 
 
 
 
 
+*/
 
 
 }

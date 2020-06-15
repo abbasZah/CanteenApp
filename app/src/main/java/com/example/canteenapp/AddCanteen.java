@@ -17,7 +17,7 @@ public class AddCanteen extends AppCompatActivity {
         setContentView(R.layout.activity_add_canteen);
 
 
-        Button btn_add_canteen = (Button) findViewById(R.id.btn_add_student);
+        Button btn_add_canteen = (Button) findViewById(R.id.btn_update);
 
         btn_add_canteen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {

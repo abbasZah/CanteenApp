@@ -31,7 +31,7 @@ public class AddStudent extends AppCompatActivity {
         et_address = findViewById(R.id.et_address);
         et_stu_id = findViewById(R.id.et_username);
         et_password = findViewById(R.id.et_password);
-        btn_add_stu = findViewById(R.id.btn_add_student);
+        btn_add_stu = findViewById(R.id.btn_update);
 
 
         btn_add_stu.setOnClickListener(new View.OnClickListener() {
