@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Phone No."
+        android:text="@string/phone_no"
         app:layout_constraintBottom_toBottomOf="@+id/et_phone_no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_phone_no"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Handler Name"
+        android:text="@string/handler_name"
         app:layout_constraintBottom_toBottomOf="@+id/et_handler_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_handler_name"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Management Name"
+        android:text="@string/management_name"
         app:layout_constraintBottom_toBottomOf="@+id/et_management_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_management_name"
@@ -50,10 +50,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: Xyz Cafe"
+        android:hint="@string/canteen_name_hint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_handler_name"
@@ -63,17 +64,18 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: John"
+        android:hint="@string/name_hint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_management_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_management_name"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Add Canteen"
+        android:text="@string/add_canteen"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="No. of Workers"
+        android:text="@string/no_of_workers"
         app:layout_constraintBottom_toBottomOf="@+id/et_no_of_workers"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_no_of_workers"
@@ -99,10 +101,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: h # 123, K Town, Lahore"
+        android:hint="@string/adrs_hint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_no_of_workers" />
+        app:layout_constraintTop_toBottomOf="@+id/et_no_of_workers"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView9"
@@ -110,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Address"
+        android:text="@string/address"
         app:layout_constraintBottom_toBottomOf="@+id/et_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_address"
@@ -124,10 +127,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: +1 331 2213223"
+        android:hint="@string/phone_hint"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_handler_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_handler_name"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/et_no_of_workers"
@@ -137,17 +141,18 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: 30"
+        android:hint="@string/hint_30"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone_no" />
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_no"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btn_add_canteen"
         android:layout_width="233dp"
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
-        android:text="ADD"
+        android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Username"
+        android:text="@string/username"
         app:layout_constraintBottom_toBottomOf="@+id/et_username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_username"
@@ -173,10 +178,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="i.e: john123"
+        android:hint="@string/uname_hint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+        app:layout_constraintTop_toBottomOf="@+id/et_address"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/et_password"
@@ -185,7 +191,9 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/pswd_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_username" />
@@ -196,7 +204,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:text="Password"
+        android:text="@string/password"
         app:layout_constraintBottom_toBottomOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_password"
