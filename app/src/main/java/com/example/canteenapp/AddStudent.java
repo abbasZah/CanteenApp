@@ -24,12 +24,12 @@ public class AddStudent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
-        et_stu_name = findViewById(R.id.et_student_name);
-        et_father_name = findViewById(R.id.et_father_name);
+        et_stu_name = findViewById(R.id.et_management_name);
+        et_father_name = findViewById(R.id.et_handler_name);
         et_phone = findViewById(R.id.et_phone_no);
-        et_degree_major = findViewById(R.id.et_degree_major);
+        et_degree_major = findViewById(R.id.et_no_of_workers);
         et_address = findViewById(R.id.et_address);
-        et_stu_id = findViewById(R.id.et_student_id);
+        et_stu_id = findViewById(R.id.et_username);
         et_password = findViewById(R.id.et_password);
         btn_add_stu = findViewById(R.id.btn_add_student);
 

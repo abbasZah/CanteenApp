@@ -6,7 +6,7 @@ public class Canteen {
     private String management_name;
     private String handler_name;
     private String phone_no;
-    private int no_of_workers;
+    private String no_of_workers;
     private String address;
     private String username;
     private String password;
@@ -14,7 +14,7 @@ public class Canteen {
     public Canteen() {
     }
 
-    public Canteen(int id, String management_name, String handler_name, String phone_no, int no_of_workers, String address, String username, String password) {
+    public Canteen(int id, String management_name, String handler_name, String phone_no, String no_of_workers, String address, String username, String password) {
 
         this.id = id;
         this.management_name = management_name;
@@ -26,7 +26,7 @@ public class Canteen {
         this.password = password;
     }
 
-    public Canteen(String management_name, String handler_name, String phone_no, int no_of_workers, String address, String username, String password) {
+    public Canteen(String management_name, String handler_name, String phone_no, String no_of_workers, String address, String username, String password) {
         this.management_name = management_name;
         this.handler_name = handler_name;
         this.phone_no = phone_no;
@@ -68,11 +68,11 @@ public class Canteen {
         this.phone_no = phone_no;
     }
 
-    public int getNo_of_workers() {
+    public String getNo_of_workers() {
         return no_of_workers;
     }
 
-    public void setNo_of_workers(int no_of_workers) {
+    public void setNo_of_workers(String no_of_workers) {
         this.no_of_workers = no_of_workers;
     }
 

@@ -24,9 +24,9 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:text="@string/father_name"
-        app:layout_constraintBottom_toBottomOf="@+id/et_father_name"
+        app:layout_constraintBottom_toBottomOf="@+id/et_handler_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_father_name"
+        app:layout_constraintTop_toTopOf="@+id/et_handler_name"
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
@@ -36,13 +36,13 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:text="@string/student_name"
-        app:layout_constraintBottom_toBottomOf="@+id/et_student_name"
+        app:layout_constraintBottom_toBottomOf="@+id/et_management_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_student_name"
+        app:layout_constraintTop_toTopOf="@+id/et_management_name"
         app:layout_constraintVertical_bias="0.538" />
 
     <EditText
-        android:id="@+id/et_student_name"
+        android:id="@+id/et_management_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -56,7 +56,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/et_father_name"
+        android:id="@+id/et_handler_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -66,7 +66,7 @@
         android:hint="@string/father_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_student_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_management_name"
         android:autofillHints="" />
 
     <TextView
@@ -87,9 +87,9 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:text="@string/degree_major"
-        app:layout_constraintBottom_toBottomOf="@+id/et_degree_major"
+        app:layout_constraintBottom_toBottomOf="@+id/et_no_of_workers"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_degree_major"
+        app:layout_constraintTop_toTopOf="@+id/et_no_of_workers"
         app:layout_constraintVertical_bias="0.346" />
 
     <EditText
@@ -103,7 +103,7 @@
         android:hint="@string/adrs_hint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_degree_major"
+        app:layout_constraintTop_toBottomOf="@+id/et_no_of_workers"
         android:autofillHints="" />
 
     <TextView
@@ -129,11 +129,11 @@
         android:hint="@string/phone_hint"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_father_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_handler_name"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/et_degree_major"
+        android:id="@+id/et_no_of_workers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -164,13 +164,13 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:text="@string/student_id"
-        app:layout_constraintBottom_toBottomOf="@+id/et_student_id"
+        app:layout_constraintBottom_toBottomOf="@+id/et_username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_student_id"
+        app:layout_constraintTop_toTopOf="@+id/et_username"
         app:layout_constraintVertical_bias="0.576" />
 
     <EditText
-        android:id="@+id/et_student_id"
+        android:id="@+id/et_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -195,7 +195,7 @@
         android:hint="@string/pswd_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_student_id" />
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
     <TextView
         android:id="@+id/textView13"
