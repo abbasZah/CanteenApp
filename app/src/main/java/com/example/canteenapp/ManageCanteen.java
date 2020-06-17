@@ -55,6 +55,17 @@ public class ManageCanteen extends AppCompatActivity {
             }
         });
 
+        Button btn_edit = findViewById(R.id.btn_edit);
+
+        btn_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(ManageCanteen.this, EditCanteen.class);
+                startActivity(i);
+
+            }
+        });
 
 
     }
