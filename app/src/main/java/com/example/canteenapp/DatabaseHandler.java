@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +73,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(col_c_username, canteen.getUsername());
         values.put(col_c_password, canteen.getPassword());
 
-        db.insert(table_canteen, null, values);
+        long newRow = db.insert(table_canteen, null, values);
+        Log.d("NewRowAdded", "" + newRow);
         db.close();
     }
 
@@ -134,6 +136,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
+    public Canteen getCanteen(String id) {
+
+        String selectQuery = "SELECT * FROM " + table_canteen + " WHERE id = " + id;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                Canteen canteen = new Canteen();
+                canteen.setId(Integer.parseInt(cursor.getString(0)));
+                canteen.setManagement_name(cursor.getString(1));
+                canteen.setHandler_name(cursor.getString(2));
+                canteen.setPhone_no(cursor.getString(3));
+                canteen.setNo_of_workers(cursor.getString(4));
+                canteen.setAddress(cursor.getString(5));
+                canteen.setUsername(cursor.getString(6));
+                canteen.setPassword(cursor.getString(7));
+
+                return canteen;
+            } while (cursor.moveToNext());
+        }
+
+        return null;
+
+    }
+
     public void deleteCanteen(Canteen canteen) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(table_canteen, col_c_id + " = ?",
@@ -143,7 +173,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-/*
+
 
     //Start from Here
 
@@ -169,7 +199,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-*/
+
 
 
 }
