@@ -1,4 +1,4 @@
-package com.example.canteenapp;
+package com.example.canteenapp.canteen;
 
 public class Canteen {
 

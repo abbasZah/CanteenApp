@@ -4,15 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".canteen.ShowCanteens">
-
-    <ListView
-        android:id="@+id/lv_canteen_list"
-        android:layout_width="409dp"
-        android:layout_height="601dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context="com.example.canteenapp.student.DeleteStudent">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
