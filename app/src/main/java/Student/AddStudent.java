@@ -1,4 +1,4 @@
-package com.example.canteenapp;
+package Student;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.canteenapp.R;
 
 public class AddStudent extends AppCompatActivity {
 
@@ -39,7 +41,7 @@ public class AddStudent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                StudentDBHandler db = new StudentDBHandler(AddStudent.this);
+                DataBaseHandler db = new DataBaseHandler(AddStudent.this);
                 Log.d("Insert: ", "Inserting ..");
 
                 db.addStudent(new Student(

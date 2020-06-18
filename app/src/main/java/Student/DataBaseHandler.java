@@ -1,4 +1,4 @@
-package com.example.canteenapp;
+package Student;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDBHandler extends SQLiteOpenHelper {
+public class DataBaseHandler extends SQLiteOpenHelper {
     private static final int db_version = 1;
     private static final String db_name = "canteen_app";
 
@@ -25,7 +25,7 @@ public class StudentDBHandler extends SQLiteOpenHelper {
     private static final String id = "id";
     private static final String password = "password";
 
-    public StudentDBHandler(@Nullable Context context) {
+    public DataBaseHandler(@Nullable Context context) {
         super(context, db_name, null, db_version);
     }
 

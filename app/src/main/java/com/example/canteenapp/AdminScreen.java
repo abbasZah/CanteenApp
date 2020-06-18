@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import Student.ManageStudent;
+
 public class AdminScreen extends AppCompatActivity {
 
     @Override

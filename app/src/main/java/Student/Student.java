@@ -1,4 +1,4 @@
-package com.example.canteenapp;
+package Student;
 
 public class Student {
     private String stu_name;
