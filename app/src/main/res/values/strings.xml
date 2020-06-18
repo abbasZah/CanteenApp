@@ -4,8 +4,8 @@
     <string name="handler_name">Handler Name</string>
     <string name="management_name">Management Name</string>
     <string name="phone_hint">i.e: +1 331 2213223</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="username">john123</string>
+    <string name="password">●●●●●●●</string>
     <string name="add">ADD</string>
     <string name="hint_30">i.e: 30</string>
     <string name="add_canteen">Add Canteen</string>
@@ -19,7 +19,7 @@
     <string name="student">Student</string>
     <string name="canteen">Canteen</string>
     <string name="admin">Admin</string>
-    <string name="login">LOGIN</string>
+    <string name="login">CONTINUE</string>
     <string name="show">Show</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
