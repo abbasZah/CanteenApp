@@ -40,4 +40,5 @@
     <string name="password_tag">Password</string>
     <string name="balance">Balance</string>
     <string name="login_continue_btn">Continue</string>
+    <string name="enter_id_to_delete">Enter id to delete</string>
 </resources>

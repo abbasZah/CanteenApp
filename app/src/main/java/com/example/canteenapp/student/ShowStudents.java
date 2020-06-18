@@ -8,8 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.canteenapp.R;
-import com.example.canteenapp.canteen.Canteen;
-import com.example.canteenapp.canteen.DatabaseHandler;
 
 import java.util.List;
 

@@ -62,7 +62,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
-    void addCanteen(Canteen canteen) {
+    public void addCanteen(Canteen canteen) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(col_c_management_name, canteen.getManagement_name());
