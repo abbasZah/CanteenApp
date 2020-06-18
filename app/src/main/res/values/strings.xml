@@ -4,8 +4,8 @@
     <string name="handler_name">Handler Name</string>
     <string name="management_name">Management Name</string>
     <string name="phone_hint">i.e: +1 331 2213223</string>
-    <string name="username">john123</string>
-    <string name="password">●●●●●●●</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <string name="add">ADD</string>
     <string name="hint_30">i.e: 30</string>
     <string name="add_canteen">Add Canteen</string>
@@ -15,7 +15,7 @@
     <string name="name_hint">i.e: John</string>
     <string name="no_of_workers">No. of Workers</string>
     <string name="adrs_hint">i.e: h # 123, K Town, Lahore</string>
-    <string name="pswd_hint">********</string>
+    <string name="pswd_hint">●●●●●●●</string>
     <string name="student">Student</string>
     <string name="canteen">Canteen</string>
     <string name="admin">Admin</string>
@@ -33,4 +33,11 @@
     <string name="degree_major">Degree Major</string>
     <string name="deg_major">i.e: Computer Science, Software Engineering</string>
     <string name="student_id">Student Id</string>
+    <string name="login_username_hint">john123</string>
+    <string name="login_password_hint">●●●●●●●</string>
+    <string name="login_to_canteenapp">Login to CanteenApp</string>
+    <string name="username_tag">Username</string>
+    <string name="password_tag">Password</string>
+    <string name="balance">Balance</string>
+    <string name="login_continue_btn">Continue</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.canteenapp.student;
 
 public class Student {
+    private int id;
     private String stu_name;
     private String father_name;
     private String phone;
@@ -11,6 +12,18 @@ public class Student {
     private double balance;
 
     public Student() {
+    }
+
+    public Student(int id, String stu_name, String father_name, String phone, String degree_major, String address, String stu_id, String password, double balance) {
+        this.id = id;
+        this.stu_name = stu_name;
+        this.father_name = father_name;
+        this.phone = phone;
+        this.degree_major = degree_major;
+        this.address = address;
+        this.stu_id = stu_id;
+        this.password = password;
+        this.balance = balance;
     }
 
     public Student(String stu_name, String father_name, String phone, String degree_major, String address, String stu_id, String password) {
@@ -36,6 +49,15 @@ public class Student {
         }
         return balance;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getStu_name() {
         return stu_name;
     }
