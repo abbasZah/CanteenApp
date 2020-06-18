@@ -1,4 +1,4 @@
-package Student;
+package com.example.canteenapp.student;
 
 import android.content.ContentValues;
 import android.content.Context;
