@@ -3,6 +3,7 @@ package com.example.canteenapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,19 +25,33 @@ public class AddStudent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
-        et_stu_name = findViewById(R.id.et_management_name);
-        et_father_name = findViewById(R.id.et_handler_name);
-        et_phone = findViewById(R.id.et_phone_no);
-        et_degree_major = findViewById(R.id.et_no_of_workers);
-        et_address = findViewById(R.id.et_address);
-        et_stu_id = findViewById(R.id.et_username);
-        et_password = findViewById(R.id.et_password);
-        btn_add_stu = findViewById(R.id.btn_update);
+        et_stu_name = (EditText) findViewById(R.id.et_stu_name);
+        et_father_name = (EditText) findViewById(R.id.et_father_name);
+        et_phone = (EditText) findViewById(R.id.et_phone_no);
+        et_degree_major = (EditText) findViewById(R.id.et_deg_major);
+        et_address = (EditText) findViewById(R.id.et_address);
+        et_stu_id = (EditText) findViewById(R.id.et_stu_id);
+        et_password = (EditText) findViewById(R.id.et_password);
+        btn_add_stu = (Button) findViewById(R.id.btn_add_stu);
 
 
         btn_add_stu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                StudentDBHandler db = new StudentDBHandler(AddStudent.this);
+                Log.d("Insert: ", "Inserting ..");
+
+                db.addStudent(new Student(
+                        et_stu_name.getText().toString(),
+                        et_father_name.getText().toString(),
+                        et_phone.getText().toString(),
+                        et_degree_major.getText().toString(),
+                        et_address.getText().toString(),
+                        et_stu_id.getText().toString(),
+                        et_password.getText().toString()
+                ));
+
                 Toast.makeText(AddStudent.this, "Added", Toast.LENGTH_LONG).show();
 
             }
