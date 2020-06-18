@@ -16,6 +16,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getSupportActionBar().hide();
+
         final Admin admin = new Admin("admin","123","Ali");
 
         final EditText et_username = findViewById(R.id.et_username);

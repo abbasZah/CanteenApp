@@ -27,19 +27,21 @@ public class AddStudent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
-        et_stu_name = (EditText) findViewById(R.id.et_stu_name);
-        et_father_name = (EditText) findViewById(R.id.et_father_name);
-        et_phone = (EditText) findViewById(R.id.et_phone_no);
-        et_degree_major = (EditText) findViewById(R.id.et_deg_major);
-        et_address = (EditText) findViewById(R.id.et_address);
-        et_stu_id = (EditText) findViewById(R.id.et_stu_id);
-        et_password = (EditText) findViewById(R.id.et_password);
-        btn_add_stu = (Button) findViewById(R.id.btn_add_stu);
+
 
 
         btn_add_stu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                et_stu_name = (EditText) findViewById(R.id.et_stu_name);
+                et_father_name = (EditText) findViewById(R.id.et_father_name);
+                et_phone = (EditText) findViewById(R.id.et_phone_no);
+                et_degree_major = (EditText) findViewById(R.id.et_deg_major);
+                et_address = (EditText) findViewById(R.id.et_address);
+                et_stu_id = (EditText) findViewById(R.id.et_stu_id);
+                et_password = (EditText) findViewById(R.id.et_password);
+                btn_add_stu = (Button) findViewById(R.id.btn_add_stu);
 
                 DataBaseHandler db = new DataBaseHandler(AddStudent.this);
                 Log.d("Insert: ", "Inserting ..");

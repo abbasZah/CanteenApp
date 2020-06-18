@@ -15,11 +15,11 @@
     <string name="name_hint">i.e: John</string>
     <string name="no_of_workers">No. of Workers</string>
     <string name="adrs_hint">i.e: h # 123, K Town, Lahore</string>
-    <string name="pswd_hint">********</string>
+    <string name="pswd_hint">●●●●●●●</string>
     <string name="student">Student</string>
     <string name="canteen">Canteen</string>
     <string name="admin">Admin</string>
-    <string name="login">LOGIN</string>
+    <string name="login">CONTINUE</string>
     <string name="show">Show</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
@@ -33,4 +33,11 @@
     <string name="degree_major">Degree Major</string>
     <string name="deg_major">i.e: Computer Science, Software Engineering</string>
     <string name="student_id">Student Id</string>
+    <string name="login_username_hint">john123</string>
+    <string name="login_password_hint">●●●●●●●</string>
+    <string name="login_to_canteenapp">Login to CanteenApp</string>
+    <string name="username_tag">Username</string>
+    <string name="password_tag">Password</string>
+    <string name="balance">Balance</string>
+    <string name="login_continue_btn">Continue</string>
 </resources>

@@ -9,24 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.canteenapp.student.EditStudent"></activity>
-        <activity android:name="com.example.canteenapp.student.DeleteStudent" />
-        <activity android:name="com.example.canteenapp.student.ShowStudents" />
-        <activity android:name=".canteen.EditCanteen" />
-        <activity android:name=".canteen.DeleteCanteen" />
-        <activity android:name="com.example.canteenapp.student.AddStudent" />
-        <activity android:name=".canteen.ShowCanteens" />
-        <activity android:name="com.example.canteenapp.student.ManageStudent" />
-        <activity android:name=".canteen.AddCanteen" />
-        <activity android:name=".canteen.ManageCanteen" />
-        <activity android:name=".AdminScreen" />
-        <activity android:name=".Login">
+        <activity android:name=".student.AddBalance"></activity>
+        <activity android:name=".student.ManageBalance" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".student.EditStudent" />
+        <activity android:name=".student.DeleteStudent" />
+        <activity android:name=".student.ShowStudents" />
+        <activity android:name=".canteen.EditCanteen" />
+        <activity android:name=".canteen.DeleteCanteen" />
+        <activity android:name=".student.AddStudent" />
+        <activity android:name=".canteen.ShowCanteens" />
+        <activity android:name=".student.ManageStudent" />
+        <activity android:name=".canteen.AddCanteen" />
+        <activity android:name=".canteen.ManageCanteen" />
+        <activity android:name=".AdminScreen" />
+        <activity android:name=".Login" />
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.canteenapp.student.ManageBalance;
 import com.example.canteenapp.canteen.ManageCanteen;
 import com.example.canteenapp.student.ManageStudent;
 
@@ -19,6 +20,7 @@ public class AdminScreen extends AppCompatActivity {
 
         Button btn_canteen = findViewById(R.id.btn_canteen);
         Button btn_student = findViewById(R.id.btn_student);
+        Button btn_balance = findViewById(R.id.btn_balance);
 
         btn_canteen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +37,14 @@ public class AdminScreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        btn_balance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminScreen.this, ManageBalance.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
