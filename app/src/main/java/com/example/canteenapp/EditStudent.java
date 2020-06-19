@@ -1,4 +1,4 @@
-package com.example.canteenapp.student;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 

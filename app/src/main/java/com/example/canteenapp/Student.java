@@ -1,6 +1,7 @@
-package com.example.canteenapp.student;
+package com.example.canteenapp;
 
 public class Student {
+
     private int id;
     private String stu_name;
     private String father_name;
@@ -14,7 +15,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String stu_name, String father_name, String phone, String degree_major, String address, String stu_id, String password, double balance) {
+    public Student(int id, String stu_name, String father_name, String phone, String degree_major, String address, String stu_id, String password) {
         this.id = id;
         this.stu_name = stu_name;
         this.father_name = father_name;
@@ -23,7 +24,7 @@ public class Student {
         this.address = address;
         this.stu_id = stu_id;
         this.password = password;
-        this.balance = balance;
+        this.balance = 0;
     }
 
     public Student(String stu_name, String father_name, String phone, String degree_major, String address, String stu_id, String password) {
@@ -34,6 +35,7 @@ public class Student {
         this.address = address;
         this.stu_id = stu_id;
         this.password = password;
+        this.balance = 0;
     }
 
     public double addBalance(double balance){
@@ -112,5 +114,13 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

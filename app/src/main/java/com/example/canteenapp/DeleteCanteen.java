@@ -1,4 +1,4 @@
-package com.example.canteenapp.student;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,38 +9,33 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.canteenapp.DatabaseHandler;
-import com.example.canteenapp.R;
+public class DeleteCanteen extends AppCompatActivity {
 
-public class DeleteStudent extends AppCompatActivity {
-
-    private Button btn_delete;
-    private EditText et_delete_student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_student);
+        setContentView(R.layout.activity_delete_canteen);
 
-         btn_delete = (Button) findViewById(R.id.btn_delete);
+        Button btn_delete = (Button) findViewById(R.id.btn_delete);
 
         btn_delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                et_delete_student = (EditText) findViewById(R.id.et_delete_student);
+                EditText et_delete_canteen = (EditText) findViewById(R.id.et_delete_canteen);
 
-                DatabaseHandler db = new DatabaseHandler(DeleteStudent.this);
+                DatabaseHandler db = new DatabaseHandler(DeleteCanteen.this);
 
                 Log.d("deleting: ", "Deleting ..");
                 boolean found =
-                        db.checkIfExist(et_delete_student.getText().toString());
+                        db.checkIfExist((et_delete_canteen.getText().toString()));
                 if(found)
                 {
 // deleting
 
-                    Student student = new Student();
+                    Canteen canteen = new Canteen();
 
-                    student.setStu_id(et_delete_student.getText().toString());
-                    db.deleteStudent(student);
+                    canteen.setId(Integer. parseInt(et_delete_canteen.getText().toString()));
+                    db.deleteCanteen(canteen);
                     Toast.makeText(getApplicationContext(), "Record Deleted",
                             Toast.LENGTH_SHORT).show();
                 }else{
@@ -49,5 +44,6 @@ public class DeleteStudent extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

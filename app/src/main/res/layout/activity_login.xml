@@ -25,7 +25,7 @@
         android:autofillHints=""
         android:background="@drawable/layout_login_edit_text"
         android:ems="10"
-        android:hint="@string/login_username_hint"
+        android:hint="john123"
         android:inputType="textPersonName"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
@@ -40,12 +40,11 @@
         android:layout_height="44dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/layout_login_button"
-        android:text="@string/login_continue_btn"
+        android:text="Continue"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        tools:text="Continue" />
+        app:layout_constraintStart_toStartOf="@+id/textView5" />
 
     <EditText
         android:id="@+id/et_password"
@@ -55,7 +54,7 @@
         android:autofillHints=""
         android:background="@drawable/layout_login_edit_text"
         android:ems="10"
-        android:hint="@string/login_password_hint"
+        android:hint="●●●●●●"
         android:inputType="textPassword"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
@@ -69,18 +68,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
+        android:text="Don't have an account? Contact admin."
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Don't have an account? Contact admin." />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="@string/login_to_canteenapp"
+        android:text="Login to CanteenApp"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -93,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/username_tag"
+        android:text="Username"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/et_username"
@@ -104,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/password_tag"
+        android:text="password"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/et_password"

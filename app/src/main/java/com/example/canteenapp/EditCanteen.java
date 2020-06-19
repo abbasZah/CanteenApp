@@ -1,4 +1,4 @@
-package com.example.canteenapp.canteen;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.canteenapp.DatabaseHandler;
-import com.example.canteenapp.R;
 
 public class EditCanteen extends AppCompatActivity {
 

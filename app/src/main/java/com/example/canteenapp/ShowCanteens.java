@@ -1,4 +1,4 @@
-package com.example.canteenapp.canteen;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.canteenapp.Canteen;
 import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 

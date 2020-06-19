@@ -1,44 +1,4 @@
 <resources>
     <string name="app_name">CanteenApp</string>
-    <string name="phone_no">Phone No.</string>
-    <string name="handler_name">Handler Name</string>
-    <string name="management_name">Management Name</string>
-    <string name="phone_hint">i.e: +1 331 2213223</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="add">ADD</string>
-    <string name="hint_30">i.e: 30</string>
-    <string name="add_canteen">Add Canteen</string>
-    <string name="address">Address</string>
-    <string name="uname_hint">i.e: john123</string>
-    <string name="canteen_name_hint">i.e: Xyz Cafe</string>
-    <string name="name_hint">i.e: John</string>
-    <string name="no_of_workers">No. of Workers</string>
-    <string name="adrs_hint">i.e: h # 123, K Town, Lahore</string>
-    <string name="pswd_hint">●●●●●●●</string>
-    <string name="student">Student</string>
-    <string name="canteen">Canteen</string>
-    <string name="admin">Admin</string>
-    <string name="login">CONTINUE</string>
-    <string name="show">Show</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
-    <string name="manage_canteen">Manage Canteen</string>
-    <string name="manage_student">Manage Student</string>
-    <string name="textview">TextView</string>
-    <string name="student_name">Student Name</string>
-    <string name="enter_your_full_name">Full name</string>
-    <string name="add_student">Add Student</string>
-    <string name="father_name">Father Name</string>
-    <string name="degree_major">Degree Major</string>
-    <string name="deg_major">i.e: Computer Science, Software Engineering</string>
-    <string name="student_id">Student Id</string>
-    <string name="login_username_hint">john123</string>
-    <string name="login_password_hint">●●●●●●●</string>
-    <string name="login_to_canteenapp">Login to CanteenApp</string>
-    <string name="username_tag">Username</string>
-    <string name="password_tag">Password</string>
-    <string name="balance">Balance</string>
-    <string name="login_continue_btn">Continue</string>
-    <string name="enter_id_to_delete">Enter id to delete</string>
+
 </resources>

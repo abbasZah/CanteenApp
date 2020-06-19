@@ -1,4 +1,4 @@
-package com.example.canteenapp.canteen;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,36 +9,37 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.canteenapp.DatabaseHandler;
-import com.example.canteenapp.R;
+public class DeleteStudent extends AppCompatActivity {
 
-public class DeleteCanteen extends AppCompatActivity {
-
+    private Button btn_delete;
+    private EditText et_delete_student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_canteen);
+        setContentView(R.layout.activity_delete_student);
 
-        Button btn_delete = (Button) findViewById(R.id.btn_delete);
+
+         btn_delete = (Button) findViewById(R.id.btn_delete);
 
         btn_delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                EditText et_delete_canteen = (EditText) findViewById(R.id.et_delete_canteen);
+                et_delete_student = (EditText) findViewById(R.id.et_delete_student);
 
-                DatabaseHandler db = new DatabaseHandler(DeleteCanteen.this);
+                DatabaseHandler db = new DatabaseHandler(DeleteStudent.this);
 
                 Log.d("deleting: ", "Deleting ..");
                 boolean found =
-                        db.checkIfExist((et_delete_canteen.getText().toString()));
+                        db.checkIfStudentExist(et_delete_student.getText().toString());
                 if(found)
                 {
 // deleting
 
-                    Canteen canteen = new Canteen();
+                    Student student = new Student();
 
-                    canteen.setId(Integer. parseInt(et_delete_canteen.getText().toString()));
-                    db.deleteCanteen(canteen);
+                    student.setId(Integer. parseInt(et_delete_student.getText().toString()));
+
+                    db.deleteStudent(student);
                     Toast.makeText(getApplicationContext(), "Record Deleted",
                             Toast.LENGTH_SHORT).show();
                 }else{
@@ -47,6 +48,7 @@ public class DeleteCanteen extends AppCompatActivity {
                 }
             }
         });
+
 
     }
 }

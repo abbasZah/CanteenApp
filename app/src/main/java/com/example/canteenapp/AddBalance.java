@@ -1,4 +1,4 @@
-package com.example.canteenapp.student;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,9 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.canteenapp.DatabaseHandler;
-import com.example.canteenapp.R;
-
 public class AddBalance extends AppCompatActivity {
 
     @Override
@@ -20,15 +17,17 @@ public class AddBalance extends AppCompatActivity {
         setContentView(R.layout.activity_add_balance);
 
 
-        final EditText et_id = (EditText) findViewById(R.id.et_id2);
 
-        final Button btn_go = (Button) findViewById(R.id.btn_go2);
+        final EditText et_id = (EditText) findViewById(R.id.et_id);
+
+        final Button btn_go = (Button) findViewById(R.id.btn_go);
 
         final EditText et_add_balance = (EditText) findViewById(R.id.et_add_balance);
 
 
 
         et_add_balance.setVisibility(View.INVISIBLE);
+        Log.d("debug: ", "debug1 ..");
 
         btn_go.setOnClickListener(new View.OnClickListener() {
 
@@ -37,22 +36,35 @@ public class AddBalance extends AppCompatActivity {
             public void onClick(View v) {
 
 
+                Log.d("debug: ", "debug2 ..");
                 //Starting a new Intent
                 final DatabaseHandler db = new DatabaseHandler(AddBalance.this);
+
+                Log.d("debug: ", "debug3 ..");
                 Log.d("deleting: ", "Deleting ..");
                 boolean found =
-                        db.checkIfExist(et_id.getText().toString());
+                        db.checkIfStudentExist(et_id.getText().toString());
+
+                Log.d("debug: ", "debug4 ..");
                 if (found) {
+
+
+                    Log.d("debug: ", "debug5 ..");
                     et_add_balance.setVisibility(View.VISIBLE);
 
                     final Student oldStudent = db.getStudent(et_id.getText().toString());
 
-                    Toast.makeText(getApplicationContext(), "Found Canteen",
+                    Log.d("debug: ", "debug6 ..");
+
+                    Toast.makeText(getApplicationContext(), "Found Student",
                             Toast.LENGTH_SHORT).show();
                     // When user update
-                    Button btn_update = findViewById(R.id.btn_update);
+
+                    Button button = findViewById(R.id.button);
                     //Listening to button event
-                    btn_update.setOnClickListener(new View.OnClickListener() {
+
+                    Log.d("debug: ", "debug7 ..");
+                    button.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View arg0) {
 
                             oldStudent.addBalance(Integer.parseInt(et_add_balance.getText().toString()));
@@ -62,12 +74,14 @@ public class AddBalance extends AppCompatActivity {
                         }
                     });
                 } else {
-                    Toast.makeText(getApplicationContext(), "Not Found Canteen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Not Found Student", Toast.LENGTH_SHORT).show();
                 }
             }
 
 
         });
+
+
 
 
 
