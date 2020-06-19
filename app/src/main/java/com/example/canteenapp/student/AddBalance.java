@@ -9,10 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
-import com.example.canteenapp.canteen.Canteen;
-import com.example.canteenapp.canteen.DatabaseHandler;
-import com.example.canteenapp.canteen.EditCanteen;
 
 public class AddBalance extends AppCompatActivity {
 
@@ -40,7 +38,7 @@ public class AddBalance extends AppCompatActivity {
 
 
                 //Starting a new Intent
-                final DataBaseHandler db = new DataBaseHandler(AddBalance.this);
+                final DatabaseHandler db = new DatabaseHandler(AddBalance.this);
                 Log.d("deleting: ", "Deleting ..");
                 boolean found =
                         db.checkIfExist(et_id.getText().toString());

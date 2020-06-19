@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 
 public class AddStudent extends AppCompatActivity {
@@ -43,7 +44,7 @@ public class AddStudent extends AppCompatActivity {
                 et_stu_id = (EditText) findViewById(R.id.et_stu_id);
                 et_password = (EditText) findViewById(R.id.et_password);
 
-                DataBaseHandler db = new DataBaseHandler(AddStudent.this);
+                DatabaseHandler db = new DatabaseHandler(AddStudent.this);
                 Log.d("Insert: ", "Inserting ..");
 
                 db.addStudent(new Student(
@@ -55,6 +56,7 @@ public class AddStudent extends AppCompatActivity {
                         et_stu_id.getText().toString(),
                         et_password.getText().toString()
                 ));
+                Log.d("Nammmme",db.getDatabaseName());
 
                 Toast.makeText(AddStudent.this, "Added", Toast.LENGTH_LONG).show();
 

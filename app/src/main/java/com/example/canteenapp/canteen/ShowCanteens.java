@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 
 import java.util.List;

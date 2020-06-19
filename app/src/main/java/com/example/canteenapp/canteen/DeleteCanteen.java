@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 
 public class DeleteCanteen extends AppCompatActivity {

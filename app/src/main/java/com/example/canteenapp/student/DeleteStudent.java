@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 
 public class DeleteStudent extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class DeleteStudent extends AppCompatActivity {
 
                 et_delete_student = (EditText) findViewById(R.id.et_delete_student);
 
-                DataBaseHandler db = new DataBaseHandler(DeleteStudent.this);
+                DatabaseHandler db = new DatabaseHandler(DeleteStudent.this);
 
                 Log.d("deleting: ", "Deleting ..");
                 boolean found =

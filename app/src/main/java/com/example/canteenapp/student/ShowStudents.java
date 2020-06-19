@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.canteenapp.DatabaseHandler;
 import com.example.canteenapp.R;
 
 import java.util.List;
@@ -19,9 +20,10 @@ public class ShowStudents extends AppCompatActivity {
         setContentView(R.layout.activity_show_students);
 
 
-        DataBaseHandler db = new DataBaseHandler(this);
+        DatabaseHandler db = new DatabaseHandler(this);
 
-        Log.d("Reading: ", "Reading all canteens..");
+
+        Log.d("Reading: ", db.getDatabaseName());
         List<Student> students = db.getAllStudents();
         String log=null;
         String [] student_array = new String[students.size()];
