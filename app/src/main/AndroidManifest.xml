@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".student.AddBalance"></activity>
-        <activity android:name=".student.ManageBalance" />
+        <activity android:name=".WithdrawBalance"></activity>
+        <activity android:name=".AddBalance" />
+        <activity android:name=".ManageBalance" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,16 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".student.EditStudent" />
-        <activity android:name=".student.DeleteStudent" />
-        <activity android:name=".student.ShowStudents" />
-        <activity android:name=".canteen.EditCanteen" />
-        <activity android:name=".canteen.DeleteCanteen" />
-        <activity android:name=".student.AddStudent" />
-        <activity android:name=".canteen.ShowCanteens" />
-        <activity android:name=".student.ManageStudent" />
-        <activity android:name=".canteen.AddCanteen" />
-        <activity android:name=".canteen.ManageCanteen" />
+        <activity android:name=".EditStudent" />
+        <activity android:name=".DeleteStudent" />
+        <activity android:name=".ShowStudents" />
+        <activity android:name=".EditCanteen" />
+        <activity android:name=".DeleteCanteen" />
+        <activity android:name=".AddStudent" />
+        <activity android:name=".ShowCanteens" />
+        <activity android:name=".ManageStudent" />
+        <activity android:name=".AddCanteen" />
+        <activity android:name=".ManageCanteen" />
         <activity android:name=".AdminScreen" />
         <activity android:name=".Login" />
     </application>

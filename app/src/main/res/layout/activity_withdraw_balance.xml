@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddBalance">
+    tools:context=".WithdrawBalance">
 
     <Button
         android:id="@+id/btn_go"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_add_balance"
+        android:id="@+id/et_withdraw_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
@@ -44,16 +44,16 @@
         android:layout_marginTop="120dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Enter amount to add"
-        app:layout_constraintEnd_toStartOf="@+id/et_add_balance"
+        android:text="Enter amount to withdraw"
+        app:layout_constraintEnd_toStartOf="@+id/et_withdraw_balance"
         app:layout_constraintTop_toBottomOf="@+id/et_id" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
-        app:layout_constraintEnd_toEndOf="@+id/et_add_balance"
-        app:layout_constraintStart_toStartOf="@+id/et_add_balance"
-        app:layout_constraintTop_toBottomOf="@+id/et_add_balance" />
+        android:text="Withdraw"
+        app:layout_constraintEnd_toEndOf="@+id/et_withdraw_balance"
+        app:layout_constraintStart_toStartOf="@+id/et_withdraw_balance"
+        app:layout_constraintTop_toBottomOf="@+id/et_withdraw_balance" />
 </androidx.constraintlayout.widget.ConstraintLayout>

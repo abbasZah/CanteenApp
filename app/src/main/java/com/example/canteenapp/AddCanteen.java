@@ -1,4 +1,4 @@
-package com.example.canteenapp.canteen;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,9 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.canteenapp.DatabaseHandler;
-import com.example.canteenapp.R;
-
 public class AddCanteen extends AppCompatActivity {
 
     @Override
@@ -20,7 +17,7 @@ public class AddCanteen extends AppCompatActivity {
         setContentView(R.layout.activity_add_canteen);
 
 
-        Button btn_add_canteen = (Button) findViewById(R.id.btn_update);
+        Button btn_add_canteen = (Button) findViewById(R.id.btn_add_canteen);
 
         btn_add_canteen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {

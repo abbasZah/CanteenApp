@@ -1,4 +1,4 @@
-package com.example.canteenapp.student;
+package com.example.canteenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,18 +19,15 @@ public class ShowStudents extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_students);
 
-
         DatabaseHandler db = new DatabaseHandler(this);
-
-
-        Log.d("Reading: ", db.getDatabaseName());
         List<Student> students = db.getAllStudents();
         String log=null;
         String [] student_array = new String[students.size()];
         int i=0;
         for (Student cn : students) {
-            student_array[i] = "Id: " + cn.getId() + "\nStudent Name: " + cn.getFather_name() +"\nFather Name: "+ cn.getFather_name() + "\nPhone No: " + cn.getPhone()
+            student_array[i] = "Id: " + cn.getId() + "\nStudent Name: " + cn.getStu_name() +"\nFather Name: "+ cn.getFather_name() + "\nPhone No: " + cn.getPhone()
                     + "\nDegree: " + cn.getDegree_major() + "\nAddress: " + cn.getAddress() +"\nUser id: "+ cn.getStu_id() + "\nPassword: " + cn.getPassword()
+                    + "\nBalance: " + cn.getBalance()
             ;
             log = log + "Id: " + cn.getId() + " ,Name: " + cn.getFather_name() + " ,Phone: " + cn.getPhone();
 
@@ -41,6 +38,8 @@ public class ShowStudents extends AppCompatActivity {
                 R.layout.activity_listview, student_array);
         ListView listView = (ListView) findViewById(R.id.lv_student_list);
         listView.setAdapter(adapter);
+
+
 
     }
 
