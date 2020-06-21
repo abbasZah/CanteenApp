@@ -13,7 +13,7 @@ public class AdminScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_screen);
-
+        getSupportActionBar().hide();
         Button btn_canteen = findViewById(R.id.btn_canteen);
         Button btn_student = findViewById(R.id.btn_student);
         Button btn_balance = findViewById(R.id.btn_balance);
