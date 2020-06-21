@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,7 +103,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public boolean checkIfExist(String name) {
+    public boolean checkIfExist(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(table_canteen, new String[]{col_c_id,
                         col_c_management_name,
@@ -112,7 +113,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         col_c_address,
                         col_c_username,
                         col_c_password}, col_c_id + "=?",
-                new String[]{name}, null, null, null, null);
+                new String[]{id}, null, null, null, null);
         if (cursor.getCount() > 0)
             return true;
         else
@@ -224,7 +225,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public boolean checkIfStudentExist(String name) {
+    public boolean checkIfStudentExist(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(table_student, new String[]{col_s_id,
                         col_s_stu_name,
@@ -234,33 +235,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         col_s_address,
                         col_s_stu_id,
                         col_s_password,
-                        col_s_balance }, col_s_id + "=?",
-                new String[]{name}, null, null, null, null);
+                        col_s_balance}, col_s_id + "=?",
+                new String[]{id}, null, null, null, null);
         if (cursor.getCount() > 0)
             return true;
         else
             return false;
 
     }
-
-//    public boolean checkIfExist(String name) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.query(table_student, new String[] {
-//                        id,
-//                        stu_name,
-//                        father_name,
-//                        phone_no,
-//                        deg_major,
-//                        address,
-//                        password }, id + "=?",
-//                new String[] { name }, null, null, null, null);
-//        if (cursor.getCount() > 0)
-//            return true;
-//        else
-//            return false;
-//
-//    }
-
 
 
     public List<Student> getAllStudents() {

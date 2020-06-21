@@ -1,13 +1,14 @@
 package com.example.canteenapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class EditCanteen extends AppCompatActivity {
 
@@ -29,6 +30,15 @@ public class EditCanteen extends AppCompatActivity {
         final EditText et_username = (EditText) findViewById(R.id.et_username);
         final EditText et_password = (EditText) findViewById(R.id.et_password);
 
+        final TextView tv_management_name = (TextView) findViewById(R.id.tv_management_name);
+        final TextView tv_handler_name = (TextView) findViewById(R.id.tv_handler_name);
+        final TextView tv_phone_no = (TextView) findViewById(R.id.tv_phone);
+        final TextView tv_no_of_workers = (TextView) findViewById(R.id.tv_no_of_worker);
+        final TextView tv_address = (TextView) findViewById(R.id.tv_address);
+        final TextView tv_username = (TextView) findViewById(R.id.tv_username);
+        final TextView tv_password = (TextView) findViewById(R.id.tv_password);
+
+
         et_management_name.setVisibility(View.INVISIBLE);
         et_handler_name.setVisibility(View.INVISIBLE);
         et_phone_no.setVisibility(View.INVISIBLE);
@@ -36,6 +46,15 @@ public class EditCanteen extends AppCompatActivity {
         et_address.setVisibility(View.INVISIBLE);
         et_username.setVisibility(View.INVISIBLE);
         et_password.setVisibility(View.INVISIBLE);
+
+
+        tv_management_name.setVisibility(View.INVISIBLE);
+        tv_handler_name.setVisibility(View.INVISIBLE);
+        tv_phone_no.setVisibility(View.INVISIBLE);
+        tv_no_of_workers.setVisibility(View.INVISIBLE);
+        tv_address.setVisibility(View.INVISIBLE);
+        tv_username.setVisibility(View.INVISIBLE);
+        tv_password.setVisibility(View.INVISIBLE);
 
         //Start from Here
 
@@ -56,6 +75,14 @@ public class EditCanteen extends AppCompatActivity {
                     et_address.setVisibility(View.VISIBLE);
                     et_username.setVisibility(View.VISIBLE);
                     et_password.setVisibility(View.VISIBLE);
+
+                    tv_management_name.setVisibility(View.VISIBLE);
+                    tv_handler_name.setVisibility(View.VISIBLE);
+                    tv_phone_no.setVisibility(View.VISIBLE);
+                    tv_no_of_workers.setVisibility(View.VISIBLE);
+                    tv_address.setVisibility(View.VISIBLE);
+                    tv_username.setVisibility(View.VISIBLE);
+                    tv_password.setVisibility(View.VISIBLE);
 
                     final Canteen oldCanteen = db.getCanteen(et_id.getText().toString());
 
