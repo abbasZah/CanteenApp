@@ -7,10 +7,20 @@
     android:background="#fff "
     tools:context=".Login">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="409dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/layout_login_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="216dp"
-        android:layout_height="49dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/layout_login_button"
         android:text="LOGIN"
@@ -24,8 +34,8 @@
     <EditText
         android:id="@+id/et_username"
         android:layout_width="291dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="96dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="68dp"
         android:autofillHints=""
         android:background="@drawable/layout_login_edit_text"
         android:ems="10"
@@ -35,14 +45,14 @@
         android:paddingRight="25dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="291dp"
-        android:layout_height="49dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:autofillHints=""
         android:background="@drawable/layout_login_edit_text"
@@ -58,45 +68,27 @@
         app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
     <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Login"
+        android:textColor="@color/colorContrast"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:text="Don't have an account? Contact admin."
-        android:textColor="@color/colorContrast"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Login"
-        android:textColor="@color/colorContrast"
-        android:textSize="42sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="409dp"
-        android:layout_height="231dp"
-        android:background="@drawable/layout_login_bg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="66dp"
-        android:layout_height="51dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/corner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
