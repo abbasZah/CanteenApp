@@ -19,6 +19,7 @@ public class ManageStudent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_student);
+        getSupportActionBar().hide();
 
         btn_add = findViewById(R.id.btn_add);
         btn_show = findViewById(R.id.btn_show);

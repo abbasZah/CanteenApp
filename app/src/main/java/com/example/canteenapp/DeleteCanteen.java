@@ -15,6 +15,7 @@ public class DeleteCanteen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_canteen);
+        getSupportActionBar().setTitle("Delete Canteen");
 
         Button btn_delete = (Button) findViewById(R.id.btn_delete);
 

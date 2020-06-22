@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F3F3"
+    android:background="#FFF"
     tools:context=".AdminScreen">
 
     <View
         android:id="@+id/view4"
-        android:layout_width="365dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="291dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/layout_admin_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +29,8 @@
 
     <View
         android:id="@+id/view8"
-        android:layout_width="365dp"
-        android:layout_height="61dp"
+        android:layout_width="291dp"
+        android:layout_height="80dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/layout_admin_card"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
 
     <View
         android:id="@+id/view7"
-        android:layout_width="365dp"
-        android:layout_height="61dp"
+        android:layout_width="291dp"
+        android:layout_height="80dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/layout_admin_card"
         app:layout_constraintEnd_toEndOf="parent"

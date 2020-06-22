@@ -19,6 +19,7 @@ public class ShowCanteens extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_canteens);
+        getSupportActionBar().setTitle("Show Canteens");
 
 
         DatabaseHandler db = new DatabaseHandler(this);

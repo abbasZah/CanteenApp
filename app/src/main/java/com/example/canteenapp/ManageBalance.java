@@ -15,6 +15,7 @@ public class ManageBalance extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_balance);
+        getSupportActionBar().hide();
 
         btn_add_balance = findViewById(R.id.btn_add_balance);
         btn_withdraw_balance = findViewById(R.id.btn_withdraw_balance);
