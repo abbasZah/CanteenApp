@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WithdrawBalance"></activity>
+        <activity android:name=".ShowItems"></activity>
+        <activity android:name=".AddItem" />
+        <activity android:name=".ManageItems" />
+        <activity android:name=".CanteenScreen" />
+        <activity android:name=".WithdrawBalance" />
         <activity android:name=".AddBalance" />
         <activity android:name=".ManageBalance" />
         <activity android:name=".SplashScreen">

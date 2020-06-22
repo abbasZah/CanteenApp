@@ -7,8 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-public class ManageStudent extends AppCompatActivity {
+public class ManageItems extends AppCompatActivity {
 
     private Button btn_add;
     private Button btn_show;
@@ -18,7 +17,7 @@ public class ManageStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_student);
+        setContentView(R.layout.activity_manage_items);
 
         btn_add = findViewById(R.id.btn_add);
         btn_show = findViewById(R.id.btn_show);
@@ -29,32 +28,31 @@ public class ManageStudent extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ManageStudent.this, AddStudent.class);
+                Intent i = new Intent(ManageItems.this, AddItem.class);
                 startActivity(i);
             }
         });
         btn_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ManageStudent.this, ShowStudents.class);
+                Intent i = new Intent(ManageItems.this, ShowItems.class);
                 startActivity(i);
             }
         });
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ManageStudent.this, DeleteStudent.class);
-                startActivity(i);
+//                Intent i = new Intent(ManageStudent.this, DeleteStudent.class);
+//                startActivity(i);
             }
         });
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ManageStudent.this, EditStudent.class);
-                startActivity(i);
+//                Intent i = new Intent(ManageStudent.this, EditStudent.class);
+//                startActivity(i);
             }
         });
-
 
 
     }
