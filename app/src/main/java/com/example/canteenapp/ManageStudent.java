@@ -1,19 +1,19 @@
 package com.example.canteenapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class ManageStudent extends AppCompatActivity {
 
-    Button btn_add;
-    Button btn_show;
-    Button btn_delete;
-    Button btn_edit;
+    private Button btn_add;
+    private Button btn_show;
+    private Button btn_delete;
+    private Button btn_edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

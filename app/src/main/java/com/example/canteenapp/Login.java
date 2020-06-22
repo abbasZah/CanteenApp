@@ -1,13 +1,13 @@
 package com.example.canteenapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
 
                 if(et_username.getText().toString().equals(admin.getUsername()) && et_password.getText().toString().equals(admin.getPassword()) )
                 {
-                    Toast.makeText(getApplicationContext(),"Logged in. Successfully ! ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Logged in Successfully ! ", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(Login.this, AdminScreen.class);
                     startActivity(i);
                 }

@@ -39,6 +39,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String col_s_password = "password";
     private static final String col_s_balance = "balance";
 
+    //Item Table name and Columns Names
+    private static final String table_item = "item";
+    private static final String col_item_id = "id";
+    private static final String col_item_name = "item_name";
+    private static final String col_item_desc = "item_desc";
+    private static final String col_item_cost = "item_cost";
+    private static final String col_item_time_to_get_ready = "deg_major";
+
 
     public DatabaseHandler(Context context) {
         super(context, db_name, null, db_version);
@@ -71,6 +79,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + col_s_password + " TEXT,"
                 + col_s_balance + " TEXT" + ")";
         db.execSQL(CREATE_STUDENTS_TABLE);
+
+
+        //Creates Item Table
+        String CREATE_ITEM_TABLE = "CREATE TABLE " + table_item + "("
+                + col_item_id + " INTEGER PRIMARY KEY,"
+                + col_item_name + " TEXT,"
+                + col_item_desc + " TEXT,"
+                + col_item_cost + " TEXT,"
+                + col_item_time_to_get_ready + " TEXT )";
+        db.execSQL(CREATE_ITEM_TABLE);
+
     }
 
 
@@ -78,6 +97,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + table_canteen);
         db.execSQL("DROP TABLE IF EXISTS " + table_student);
+        db.execSQL("DROP TABLE IF EXISTS " + table_item);
 
         onCreate(db);
     }
@@ -203,29 +223,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[]{String.valueOf(canteen.getId())});
     }
 
-    public Canteen isCanteenHandler(String username, String password){
+    public Canteen isCanteenHandler(String username, String password) {
 
         String selectQuery = "SELECT * FROM " + table_canteen + " WHERE username = " + username + " AND password = " + password;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
 
-        if (cursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
 
-            do {
+                do {
 
-                Canteen canteen = new Canteen();
-                canteen.setId(Integer.parseInt(cursor.getString(0)));
-                canteen.setManagement_name(cursor.getString(1));
-                canteen.setHandler_name(cursor.getString(2));
-                canteen.setPhone_no(cursor.getString(3));
-                canteen.setNo_of_workers(cursor.getString(4));
-                canteen.setAddress(cursor.getString(5));
-                canteen.setUsername(cursor.getString(6));
-                canteen.setPassword(cursor.getString(7));
+                    Canteen canteen = new Canteen();
+                    canteen.setId(Integer.parseInt(cursor.getString(0)));
+                    canteen.setManagement_name(cursor.getString(1));
+                    canteen.setHandler_name(cursor.getString(2));
+                    canteen.setPhone_no(cursor.getString(3));
+                    canteen.setNo_of_workers(cursor.getString(4));
+                    canteen.setAddress(cursor.getString(5));
+                    canteen.setUsername(cursor.getString(6));
+                    canteen.setPassword(cursor.getString(7));
 
-                return canteen;
-            } while (cursor.moveToNext());
+                    return canteen;
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
 
         return null;
     }
@@ -364,8 +389,47 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////    Item Functions//////////////------------------------///////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+    public void addItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(col_item_id, item.getItem_id());
+        values.put(col_item_name, item.getFood_name());
+        values.put(col_item_desc, item.getItem_desc());
+        values.put(col_item_cost, item.getCost());
+        values.put(col_item_time_to_get_ready, item.getTime_to_get_ready());
 
+        long newRow = db.insert(table_item, null, values);
+        Log.d("NewRowAdded", "" + newRow);
+        db.close();
+    }
+
+    public List<FoodItem> getAllItems() {
+
+        List<FoodItem> itemList = new ArrayList<FoodItem>();
+        String selectQuery = "SELECT * FROM " + table_item;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                FoodItem item = new FoodItem();
+                item.setItem_id(Integer.parseInt(cursor.getString(0)));
+                item.setFood_name(cursor.getString(1));
+                item.setItem_desc(cursor.getString(2));
+                item.setCost(cursor.getString(3));
+                item.setTime_to_get_ready(cursor.getString(4));
+
+                itemList.add(item);
+            } while (cursor.moveToNext());
+        }
+
+        return itemList;
+    }
 
 }
