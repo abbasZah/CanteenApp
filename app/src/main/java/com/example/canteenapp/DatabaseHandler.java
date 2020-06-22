@@ -202,6 +202,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return db.update(table_canteen, values, col_c_id + " = ?",
                 new String[]{String.valueOf(canteen.getId())});
     }
+
+    public Canteen isCanteenHandler(String username, String password){
+
+        String selectQuery = "SELECT * FROM " + table_canteen + " WHERE username = " + username + " AND password = " + password;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                Canteen canteen = new Canteen();
+                canteen.setId(Integer.parseInt(cursor.getString(0)));
+                canteen.setManagement_name(cursor.getString(1));
+                canteen.setHandler_name(cursor.getString(2));
+                canteen.setPhone_no(cursor.getString(3));
+                canteen.setNo_of_workers(cursor.getString(4));
+                canteen.setAddress(cursor.getString(5));
+                canteen.setUsername(cursor.getString(6));
+                canteen.setPassword(cursor.getString(7));
+
+                return canteen;
+            } while (cursor.moveToNext());
+        }
+
+        return null;
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////    Student Functions//////////////------------------------///////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
