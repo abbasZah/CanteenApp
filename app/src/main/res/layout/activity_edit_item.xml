@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditItem">
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="216dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/layout_login_button"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:text="Update"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="i.e: Chicken Tikka Pizza"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_item_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_item_id" />
+
+    <EditText
+        android:id="@+id/et_item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Delightful Fast Food"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_cost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_food_name" />
+
+    <EditText
+        android:id="@+id/et_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="i.e: 30, 10, 400"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_time_to_get_ready"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_item_desc" />
+
+    <EditText
+        android:id="@+id/et_time_to_get_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:hint="i.e: 15 min, 30 min"
+        android:inputType="textAutoComplete"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cost" />
+
+    <EditText
+        android:id="@+id/et_item_id"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:hint="Enter id to update"
+        android:inputType="numberSigned"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_go"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_go"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_login_button"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:text="Go"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_item_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Cost"
+        app:layout_constraintBottom_toBottomOf="@+id/et_cost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_cost"
+        app:layout_constraintVertical_bias="0.461" />
+
+    <TextView
+        android:id="@+id/tv_item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Item Description"
+        app:layout_constraintBottom_toBottomOf="@+id/et_item_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_item_desc"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <TextView
+        android:id="@+id/tv_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Food Name"
+        app:layout_constraintBottom_toBottomOf="@+id/et_food_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_food_name"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <TextView
+        android:id="@+id/tv_time_to_get_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Time To Get Ready"
+        app:layout_constraintBottom_toBottomOf="@+id/et_time_to_get_ready"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_time_to_get_ready"
+        app:layout_constraintVertical_bias="0.346" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

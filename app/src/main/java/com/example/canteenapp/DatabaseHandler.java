@@ -432,4 +432,70 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return itemList;
     }
 
+    public boolean checkIfItemExist(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(table_item, new String[]{
+                        col_item_id,
+                        col_item_name,
+                        col_item_desc,
+                        col_item_cost,
+                        col_item_time_to_get_ready}, col_item_id + "=?",
+                new String[]{id}, null, null, null, null);
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+
+    }
+
+    public void deleteItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(table_item, col_item_id + " = ?",
+                new String[]{Integer.toString(item.getItem_id())});
+        db.close();
+
+    }
+
+    public FoodItem getItem(String id) {
+
+        String selectQuery = "SELECT * FROM " + table_item + " WHERE id = " + id;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                FoodItem item = new FoodItem();
+                item.setItem_id(Integer.parseInt(cursor.getString(0)));
+                item.setFood_name(cursor.getString(1));
+                item.setItem_desc(cursor.getString(2));
+                item.setCost(cursor.getString(3));
+                item.setTime_to_get_ready(cursor.getString(4));
+
+
+                return item;
+            } while (cursor.moveToNext());
+        }
+
+        return null;
+
+    }
+
+    public int updateItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(col_item_name, item.getFood_name());
+        values.put(col_item_desc, item.getItem_desc());
+        values.put(col_item_cost, item.getCost());
+        values.put(col_item_time_to_get_ready, item.getTime_to_get_ready());
+
+
+        return db.update(table_item, values, col_item_id + " = ?",
+                new String[]{String.valueOf(item.getItem_id())});
+
+    }
 }
