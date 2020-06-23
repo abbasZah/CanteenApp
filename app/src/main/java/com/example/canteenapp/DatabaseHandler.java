@@ -45,7 +45,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String col_item_name = "item_name";
     private static final String col_item_desc = "item_desc";
     private static final String col_item_cost = "item_cost";
-    private static final String col_item_time_to_get_ready = "deg_major";
+    private static final String col_item_time_to_get_ready = "time_to_get_ready";
 
 
     public DatabaseHandler(Context context) {
@@ -87,7 +87,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + col_item_name + " TEXT,"
                 + col_item_desc + " TEXT,"
                 + col_item_cost + " TEXT,"
-                + col_item_time_to_get_ready + " TEXT )";
+                + col_item_time_to_get_ready + " TEXT" + ")";
         db.execSQL(CREATE_ITEM_TABLE);
 
     }
@@ -397,7 +397,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void addItem(FoodItem item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(col_item_id, item.getItem_id());
+//        values.put(col_item_id, item.getItem_id());
         values.put(col_item_name, item.getFood_name());
         values.put(col_item_desc, item.getItem_desc());
         values.put(col_item_cost, item.getCost());
