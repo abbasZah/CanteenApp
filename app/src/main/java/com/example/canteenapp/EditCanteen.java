@@ -16,11 +16,12 @@ public class EditCanteen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_canteen);
-
+        getSupportActionBar().setTitle("Update Canteen");
 
         final EditText et_id = (EditText) findViewById(R.id.et_id);
 
         final Button btn_go = (Button) findViewById(R.id.btn_go);
+        final Button btn_update = (Button) findViewById(R.id.btn_update);
 
         final EditText et_management_name = (EditText) findViewById(R.id.et_management_name);
         final EditText et_handler_name = (EditText) findViewById(R.id.et_handler_name);
@@ -46,6 +47,7 @@ public class EditCanteen extends AppCompatActivity {
         et_address.setVisibility(View.INVISIBLE);
         et_username.setVisibility(View.INVISIBLE);
         et_password.setVisibility(View.INVISIBLE);
+        btn_update.setVisibility(View.INVISIBLE);
 
 
         tv_management_name.setVisibility(View.INVISIBLE);
@@ -75,6 +77,8 @@ public class EditCanteen extends AppCompatActivity {
                     et_address.setVisibility(View.VISIBLE);
                     et_username.setVisibility(View.VISIBLE);
                     et_password.setVisibility(View.VISIBLE);
+
+                    btn_update.setVisibility(View.VISIBLE);
 
                     tv_management_name.setVisibility(View.VISIBLE);
                     tv_handler_name.setVisibility(View.VISIBLE);

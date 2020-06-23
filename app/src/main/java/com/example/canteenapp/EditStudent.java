@@ -21,6 +21,7 @@ public class EditStudent extends AppCompatActivity {
         final EditText et_id = (EditText) findViewById(R.id.et_id);
 
         final Button btn_go = (Button) findViewById(R.id.btn_go);
+        final Button btn_update = (Button) findViewById(R.id.btn_update);
 
         final EditText et_stu_name = (EditText) findViewById(R.id.et_stu_name);
         final EditText et_father_name = (EditText) findViewById(R.id.et_father_name);
@@ -46,6 +47,8 @@ public class EditStudent extends AppCompatActivity {
         et_address.setVisibility(View.INVISIBLE);
         et_stu_id.setVisibility(View.INVISIBLE);
         et_password.setVisibility(View.INVISIBLE);
+
+        btn_update.setVisibility(View.INVISIBLE);
 
         tv_stu_name.setVisibility(View.INVISIBLE);
         tv_father_name.setVisibility(View.INVISIBLE);
@@ -76,6 +79,8 @@ public class EditStudent extends AppCompatActivity {
                     et_password.setVisibility(View.VISIBLE);
 
                     et_stu_id.setEnabled(false); //Can't change id
+
+                    btn_update.setVisibility(View.VISIBLE);
 
                     tv_stu_name.setVisibility(View.VISIBLE);
                     tv_father_name.setVisibility(View.VISIBLE);

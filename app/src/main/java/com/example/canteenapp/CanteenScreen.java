@@ -14,6 +14,7 @@ public class CanteenScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canteen_screen);
+        getSupportActionBar().hide();
 
         Intent i = getIntent();
         int canteen_id = i.getIntExtra("CANTEEN_ID", -1);

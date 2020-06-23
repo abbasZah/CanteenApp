@@ -13,6 +13,7 @@ public class ManageCanteen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_canteen);
+        getSupportActionBar().hide();
 
         Button btn_add = findViewById(R.id.btn_add);
 

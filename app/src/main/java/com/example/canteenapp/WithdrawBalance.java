@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WithdrawBalance extends AppCompatActivity {
@@ -18,12 +19,15 @@ public class WithdrawBalance extends AppCompatActivity {
 
 
         final EditText et_id = (EditText) findViewById(R.id.et_id);
+        final TextView textView16 = (TextView) findViewById(R.id.textView16);
+
         final Button btn_go = (Button) findViewById(R.id.btn_go);
         final EditText et_withdraw_balance = (EditText) findViewById(R.id.et_withdraw_balance);
 
 
 
         et_withdraw_balance.setVisibility(View.INVISIBLE);
+        textView16.setVisibility(View.INVISIBLE);
 
         btn_go.setOnClickListener(new View.OnClickListener() {
 
@@ -41,6 +45,7 @@ public class WithdrawBalance extends AppCompatActivity {
                 if (found) {
 
                     et_withdraw_balance.setVisibility(View.VISIBLE);
+                    textView16.setVisibility(View.VISIBLE);
 
                     final Student oldStudent = db.getStudent(et_id.getText().toString());
 
