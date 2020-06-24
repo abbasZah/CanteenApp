@@ -49,8 +49,8 @@ public class ManageItems extends AppCompatActivity {
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(ManageStudent.this, EditStudent.class);
-//                startActivity(i);
+                Intent i = new Intent(ManageItems.this, EditItem.class);
+                startActivity(i);
             }
         });
 
