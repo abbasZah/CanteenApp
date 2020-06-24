@@ -42,8 +42,8 @@ public class ManageItems extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(ManageStudent.this, DeleteStudent.class);
-//                startActivity(i);
+                Intent i = new Intent(ManageItems.this, DeleteItem.class);
+                startActivity(i);
             }
         });
         btn_edit.setOnClickListener(new View.OnClickListener() {
