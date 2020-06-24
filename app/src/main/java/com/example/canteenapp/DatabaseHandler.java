@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String col_s_stu_id = "stu_id";
     private static final String col_s_password = "password";
     private static final String col_s_balance = "balance";
+
+    //Item Table name and Columns Names
+    private static final String table_item = "item";
+    private static final String col_item_id = "id";
+    private static final String col_item_name = "item_name";
+    private static final String col_item_desc = "item_desc";
+    private static final String col_item_cost = "item_cost";
+    private static final String col_item_time_to_get_ready = "time_to_get_ready";
 
 
     public DatabaseHandler(Context context) {
@@ -70,6 +79,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + col_s_password + " TEXT,"
                 + col_s_balance + " TEXT" + ")";
         db.execSQL(CREATE_STUDENTS_TABLE);
+
+
+        //Creates Item Table
+        String CREATE_ITEM_TABLE = "CREATE TABLE " + table_item + "("
+                + col_item_id + " INTEGER PRIMARY KEY,"
+                + col_item_name + " TEXT,"
+                + col_item_desc + " TEXT,"
+                + col_item_cost + " TEXT,"
+                + col_item_time_to_get_ready + " TEXT" + ")";
+        db.execSQL(CREATE_ITEM_TABLE);
+
     }
 
 
@@ -77,6 +97,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + table_canteen);
         db.execSQL("DROP TABLE IF EXISTS " + table_student);
+        db.execSQL("DROP TABLE IF EXISTS " + table_item);
 
         onCreate(db);
     }
@@ -102,7 +123,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    public boolean checkIfExist(String name) {
+    public boolean checkIfExist(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(table_canteen, new String[]{col_c_id,
                         col_c_management_name,
@@ -112,7 +133,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         col_c_address,
                         col_c_username,
                         col_c_password}, col_c_id + "=?",
-                new String[]{name}, null, null, null, null);
+                new String[]{id}, null, null, null, null);
         if (cursor.getCount() > 0)
             return true;
         else
@@ -201,6 +222,38 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return db.update(table_canteen, values, col_c_id + " = ?",
                 new String[]{String.valueOf(canteen.getId())});
     }
+
+    public Canteen isCanteenHandler(String username, String password) {
+
+        String selectQuery = "SELECT * FROM " + table_canteen + " WHERE username = '" + username + "' AND password = '" + password + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
+
+            if (cursor.moveToFirst()) {
+
+                do {
+
+                    Canteen canteen = new Canteen();
+                    canteen.setId(Integer.parseInt(cursor.getString(0)));
+                    canteen.setManagement_name(cursor.getString(1));
+                    canteen.setHandler_name(cursor.getString(2));
+                    canteen.setPhone_no(cursor.getString(3));
+                    canteen.setNo_of_workers(cursor.getString(4));
+                    canteen.setAddress(cursor.getString(5));
+                    canteen.setUsername(cursor.getString(6));
+                    canteen.setPassword(cursor.getString(7));
+
+                    return canteen;
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////    Student Functions//////////////------------------------///////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -224,7 +277,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    public boolean checkIfStudentExist(String name) {
+    public boolean checkIfStudentExist(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(table_student, new String[]{col_s_id,
                         col_s_stu_name,
@@ -234,33 +287,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         col_s_address,
                         col_s_stu_id,
                         col_s_password,
-                        col_s_balance }, col_s_id + "=?",
-                new String[]{name}, null, null, null, null);
+                        col_s_balance}, col_s_id + "=?",
+                new String[]{id}, null, null, null, null);
         if (cursor.getCount() > 0)
             return true;
         else
             return false;
 
     }
-
-//    public boolean checkIfExist(String name) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.query(table_student, new String[] {
-//                        id,
-//                        stu_name,
-//                        father_name,
-//                        phone_no,
-//                        deg_major,
-//                        address,
-//                        password }, id + "=?",
-//                new String[] { name }, null, null, null, null);
-//        if (cursor.getCount() > 0)
-//            return true;
-//        else
-//            return false;
-//
-//    }
-
 
 
     public List<Student> getAllStudents() {
@@ -355,8 +389,113 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////    Item Functions//////////////------------------------///////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+    public void addItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+//        values.put(col_item_id, item.getItem_id());
+        values.put(col_item_name, item.getFood_name());
+        values.put(col_item_desc, item.getItem_desc());
+        values.put(col_item_cost, item.getCost());
+        values.put(col_item_time_to_get_ready, item.getTime_to_get_ready());
+
+        long newRow = db.insert(table_item, null, values);
+        Log.d("NewRowAdded", "" + newRow);
+        db.close();
+    }
+
+    public List<FoodItem> getAllItems() {
+
+        List<FoodItem> itemList = new ArrayList<FoodItem>();
+        String selectQuery = "SELECT * FROM " + table_item;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                FoodItem item = new FoodItem();
+                item.setItem_id(Integer.parseInt(cursor.getString(0)));
+                item.setFood_name(cursor.getString(1));
+                item.setItem_desc(cursor.getString(2));
+                item.setCost(cursor.getString(3));
+                item.setTime_to_get_ready(cursor.getString(4));
+
+                itemList.add(item);
+            } while (cursor.moveToNext());
+        }
+
+        return itemList;
+    }
+
+    public boolean checkIfItemExist(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(table_item, new String[]{
+                        col_item_id,
+                        col_item_name,
+                        col_item_desc,
+                        col_item_cost,
+                        col_item_time_to_get_ready}, col_item_id + "=?",
+                new String[]{id}, null, null, null, null);
+        if (cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+
+    }
+
+    public void deleteItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(table_item, col_item_id + " = ?",
+                new String[]{Integer.toString(item.getItem_id())});
+        db.close();
+
+    }
+
+    public FoodItem getItem(String id) {
+
+        String selectQuery = "SELECT * FROM " + table_item + " WHERE id = " + id;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+
+                FoodItem item = new FoodItem();
+                item.setItem_id(Integer.parseInt(cursor.getString(0)));
+                item.setFood_name(cursor.getString(1));
+                item.setItem_desc(cursor.getString(2));
+                item.setCost(cursor.getString(3));
+                item.setTime_to_get_ready(cursor.getString(4));
 
 
+                return item;
+            } while (cursor.moveToNext());
+        }
+
+        return null;
+
+    }
+
+    public int updateItem(FoodItem item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(col_item_name, item.getFood_name());
+        values.put(col_item_desc, item.getItem_desc());
+        values.put(col_item_cost, item.getCost());
+        values.put(col_item_time_to_get_ready, item.getTime_to_get_ready());
+
+
+        return db.update(table_item, values, col_item_id + " = ?",
+                new String[]{String.valueOf(item.getItem_id())});
+
+    }
 }

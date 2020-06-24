@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManageBalance">
+    tools:context=".ManageItems">
 
     <View
-        android:id="@+id/view6"
+        android:id="@+id/view11"
         android:layout_width="409dp"
         android:layout_height="152dp"
         android:layout_marginTop="-1dp"
@@ -17,40 +17,68 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/Items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Balance"
+        android:text="Items"
         android:textColor="@color/colorContrast"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view6" />
+        app:layout_constraintTop_toBottomOf="@+id/view11" />
 
     <Button
-        android:id="@+id/btn_withdraw_balance"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/layout_login_button"
-        android:text="Withdraw"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add_balance" />
-
-    <Button
-        android:id="@+id/btn_add_balance"
+        android:id="@+id/btn_add"
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/layout_login_button"
-        android:text="Deposit"
+        android:text="Add"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/Items" />
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_login_button"
+        android:text="Show"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_login_button"
+        android:text="Delete"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_login_button"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

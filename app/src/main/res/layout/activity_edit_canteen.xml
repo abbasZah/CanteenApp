@@ -6,8 +6,175 @@
     android:layout_height="match_parent"
     tools:context=".EditCanteen">
 
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="216dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/layout_login_button"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:text="Update"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_go"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/layout_login_button"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        android:text="Go"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_management_name"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_handler_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_go" />
+
+    <EditText
+        android:id="@+id/et_handler_name"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_phone_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_management_name" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_no_of_workers" />
+
+    <EditText
+        android:id="@+id/et_phone_no"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="phone"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_no_of_workers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_handler_name" />
+
+    <EditText
+        android:id="@+id/et_no_of_workers"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_no" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:background="@drawable/layout_login_edit_text"
+        android:ems="10"
+        android:hint="Enter id to update"
+        android:inputType="numberSigned"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_go"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -19,7 +186,7 @@
         app:layout_constraintVertical_bias="0.461" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_handler_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -31,7 +198,7 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_management_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -42,34 +209,8 @@
         app:layout_constraintTop_toTopOf="@+id/et_management_name"
         app:layout_constraintVertical_bias="0.538" />
 
-    <EditText
-        android:id="@+id/et_management_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id" />
-
-    <EditText
-        android:id="@+id/et_handler_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_management_name" />
-
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_no_of_worker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -80,21 +221,8 @@
         app:layout_constraintTop_toTopOf="@+id/et_no_of_workers"
         app:layout_constraintVertical_bias="0.346" />
 
-    <EditText
-        android:id="@+id/et_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_no_of_workers" />
-
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -105,45 +233,8 @@
         app:layout_constraintTop_toTopOf="@+id/et_address"
         app:layout_constraintVertical_bias="0.384" />
 
-    <EditText
-        android:id="@+id/et_phone_no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_handler_name" />
-
-    <EditText
-        android:id="@+id/et_no_of_workers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone_no" />
-
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="233dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="28dp"
-        android:text="Update"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
-
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -154,34 +245,8 @@
         app:layout_constraintTop_toTopOf="@+id/et_username"
         app:layout_constraintVertical_bias="0.576" />
 
-    <EditText
-        android:id="@+id/et_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_address" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_username" />
-
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -191,29 +256,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_password"
         app:layout_constraintVertical_bias="0.384" />
-
-    <EditText
-        android:id="@+id/et_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="enter id to update"
-        android:inputType="numberSigned"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
-        android:text="Go"
-        app:layout_constraintStart_toEndOf="@+id/et_id"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

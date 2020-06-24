@@ -1,69 +1,59 @@
 package com.example.canteenapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ManageCanteen extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ManageItems extends AppCompatActivity {
+
+    private Button btn_add;
+    private Button btn_show;
+    private Button btn_delete;
+    private Button btn_edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_canteen);
+        setContentView(R.layout.activity_manage_items);
         getSupportActionBar().hide();
+        btn_add = findViewById(R.id.btn_add);
+        btn_show = findViewById(R.id.btn_show);
+        btn_delete = findViewById(R.id.btn_delete);
+        btn_edit = findViewById(R.id.btn_edit);
 
-        Button btn_add = findViewById(R.id.btn_add);
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-               Intent i = new Intent(ManageCanteen.this, AddCanteen.class);
-              startActivity(i);
-
+                Intent i = new Intent(ManageItems.this, AddItem.class);
+                startActivity(i);
             }
         });
-
-        Button btn_show = findViewById(R.id.btn_show);
-
         btn_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(ManageCanteen.this, ShowCanteens.class);
+                Intent i = new Intent(ManageItems.this, ShowItems.class);
                 startActivity(i);
-
             }
         });
-
-        Button btn_delete = findViewById(R.id.btn_delete);
-
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(ManageCanteen.this, DeleteCanteen.class);
+                Intent i = new Intent(ManageItems.this, DeleteItem.class);
                 startActivity(i);
-
             }
         });
-
-        Button btn_edit = findViewById(R.id.btn_edit);
-
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent i = new Intent(ManageCanteen.this, EditCanteen.class);
+                Intent i = new Intent(ManageItems.this, EditItem.class);
                 startActivity(i);
-
             }
         });
 
 
     }
 }
-

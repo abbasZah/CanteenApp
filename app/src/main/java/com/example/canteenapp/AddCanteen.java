@@ -15,7 +15,7 @@ public class AddCanteen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_canteen);
-
+        getSupportActionBar().setTitle("Add Canteen");
 
         Button btn_add_canteen = (Button) findViewById(R.id.btn_add_canteen);
 
