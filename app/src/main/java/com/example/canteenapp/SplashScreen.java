@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run(){
 
                 try{
-                    sleep(1000);
+                    sleep(2000);
 
                 }
                 catch (Exception e){

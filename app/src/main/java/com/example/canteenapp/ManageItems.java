@@ -18,7 +18,7 @@ public class ManageItems extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_items);
-
+        getSupportActionBar().hide();
         btn_add = findViewById(R.id.btn_add);
         btn_show = findViewById(R.id.btn_show);
         btn_delete = findViewById(R.id.btn_delete);
