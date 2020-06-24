@@ -225,7 +225,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Canteen isCanteenHandler(String username, String password) {
 
-        String selectQuery = "SELECT * FROM " + table_canteen + " WHERE username = " + username + " AND password = " + password;
+        String selectQuery = "SELECT * FROM " + table_canteen + " WHERE username = '" + username + "' AND password = '" + password + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         try {
             Cursor cursor = db.rawQuery(selectQuery, null);
